@@ -1,20 +1,20 @@
 var should    = require("should");
 var helper    = require("node-red-node-test-helper");
-var lowerNode = require("../mytimeout.js");
+var lowerNode = require("../countdownage.js");
 
 helper.init(require.resolve('node-red'));
 
-describe('mytimeout Node (don\'t trust these tests yet)', function () {
+describe('countdownage Node (don\'t trust these tests yet)', function () {
     
     afterEach(function () {
         helper.unload();
     });
     
     it('should be loaded', function (done) {
-        var flow = [{ id: "n1", type: "mytimeout", name: "mytimeout" }];
+        var flow = [{ id: "n1", type: "countdownage", name: "countdownage" }];
         helper.load(lowerNode, flow, function () {
             var n1 = helper.getNode("n1");
-            n1.should.have.property('name', 'mytimeout');
+            n1.should.have.property('name', 'countdownage');
             done();
         });
     });
@@ -22,7 +22,7 @@ describe('mytimeout Node (don\'t trust these tests yet)', function () {
     it('should make payload on', function (done) {
         
         var flow = [
-            { id: "n1", type: "mytimeout", name: "mytimeout",wires:[["n2"]] },
+            { id: "n1", type: "countdownage", name: "countdownage",wires:[["n2"]] },
             { id: "n2", type: "helper" }
         ];
         helper.load(lowerNode, flow, function () {
@@ -38,7 +38,7 @@ describe('mytimeout Node (don\'t trust these tests yet)', function () {
 
     it('should make payload off', function (done) {
         var flow = [
-            { id: "n1", type: "mytimeout", name: "mytimeout",wires:[["n2"]] },
+            { id: "n1", type: "countdownage", name: "countdownage",wires:[["n2"]] },
             { id: "n2", type: "helper" }
         ];
         helper.load(lowerNode, flow, function () {
@@ -59,7 +59,7 @@ describe('mytimeout Node (don\'t trust these tests yet)', function () {
     
     it('should make payload on/stop', function (done) {
         var flow = [
-            { id: "n1", type: "mytimeout", name: "mytimeout",wires:[["n2"]] },
+            { id: "n1", type: "countdownage", name: "countdownage",wires:[["n2"]] },
             { id: "n2", type: "helper" }
         ];
         helper.load(lowerNode, flow, function () {
@@ -104,7 +104,7 @@ home/test/countdown-out-b-txt {"payload":0,"state":0,"flag":"off"}
     it('should make payload on and status', function (done) {
         
         var flow = [
-            { id: "n1", type: "mytimeout", name: "mytimeout",wires:[["n2","n3"]] },
+            { id: "n1", type: "countdownage", name: "countdownage",wires:[["n2","n3"]] },
             { id: "n2", type: "helper" },
             { id: "n3", type: "helper" }
         ];
@@ -137,7 +137,7 @@ home/test/countdown-out-b-txt {"payload":0,"state":0,"flag":"off"}
     it('should make payload on and status (2nd)', function (done) {
         console.log('After:  should make payload on and status (2nd)');
         var flow = [
-            { id: "n1", type: "mytimeout", name: "mytimeout",wires:[["n2","n3"]] },
+            { id: "n1", type: "countdownage", name: "countdownage",wires:[["n2","n3"]] },
             { id: "n2", type: "helper" },
             { id: "n3", type: "helper" }
         ];
