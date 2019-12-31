@@ -43,7 +43,7 @@
     },
     {
         "id": "f9b1a714.22eed8",
-        "type": "mytimeout",
+        "type": "countdownage",
         "z": "69aa7235.b3844c",
         "name": "My Timeout",
         "outtopic": "zTopic",
@@ -166,7 +166,7 @@
         "type": "comment",
         "z": "69aa7235.b3844c",
         "name": "Base test",
-        "info": "This is my base test node. I'm using it to\nexperiment with building a pair-wise test wuite\nfor mytimeout.js",
+        "info": "This is my base test node. I'm using it to\nexperiment with building a pair-wise test wuite\nfor countdownage.js",
         "x": 86.78125,
         "y": 42.164772033691406,
         "wires": []
@@ -216,7 +216,7 @@
     },
     {
         "id": "11c04cbc.f96993",
-        "type": "mytimeout",
+        "type": "countdownage",
         "z": "69aa7235.b3844c",
         "name": "My Timeout",
         "outtopic": "zTopic",

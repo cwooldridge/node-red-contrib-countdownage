@@ -560,5 +560,5 @@ module.exports = function(RED) {
         });
 
     } // function myTimeoutNode(n);
-    RED.nodes.registerType("mytimeout", countdownNode);
+    RED.nodes.registerType("countdownage", countdownNode);
 } // module.exports
